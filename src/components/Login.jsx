@@ -10,6 +10,7 @@ export const Login = ()=>{
     const [password,setPassword] = useState('User@1234');
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const [error,setError] = useState("");
     const handleLogin = async()=>{
       try{
         const res = await axios.post(base_URL+"/login",{
@@ -22,6 +23,7 @@ export const Login = ()=>{
       } 
       catch(err){
         console.error(err);
+        setError(err.response?.data?.error || err.message || "Something went wrong");
       } 
     }
     return (
@@ -45,6 +47,7 @@ export const Login = ()=>{
         <input type="password" value={password} placeholder="Enter Password" className="input input-bordered w-full max-w-xl" onChange={(e)=>setPassword(e.target.value)}></input>
         </label>
         </div>
+        <p className="text-red-600">{error}</p>
         <div className="card-actions justify-center my-2">
         <button className="btn btn-primary" onClick={handleLogin}>Login</button>
         </div>

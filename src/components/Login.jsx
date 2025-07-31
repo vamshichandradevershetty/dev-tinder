@@ -16,7 +16,7 @@ export const Login = ()=>{
         const res = await axios.post(base_URL+"/login",{
             emailID,password,
         },{withCredentials:true}); //to set cookies we use setcredentials as true
-        console.log(res.data);
+        //console.log(res.data);
         dispatch(addUser(res.data))
         return navigate("/");
         

@@ -46,6 +46,16 @@ export const NavBar = ()=>{
             <span className="badge">New</span>
           </Link>
         </li>
+         <li>
+          <Link to="/connections"className="justify-between">
+            Connections
+         </Link>
+        </li>
+        <li>
+          <Link to="/requests"className="justify-between">
+            pendingRequests
+         </Link>
+        </li>
         <li><a>Settings</a></li>
         <li><Link onClick={handleLogOut}>Logout</Link></li>
       </ul>

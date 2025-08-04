@@ -21,6 +21,8 @@ export const Feed = ()=>{
         }
     }
     useEffect(()=>{getFeed()},[])
+    if(!feed) return ;
+    if(feed.length <= 0 ) return <h1 className="font-bold text-3xl text-center my-10">Caught Up All Profiles</h1>
     return feed && (
         <div className="my-8 flex justify-center border-b-cyan-50">
         <UserCard user={feed[0]}/>

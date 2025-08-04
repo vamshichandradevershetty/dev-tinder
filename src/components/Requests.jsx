@@ -38,7 +38,7 @@ export const Requests = ()=>{
 <div>
         <h1 className="flex justify-center my-8 text-2xl font-bold">Pending Requests</h1>
 
-        <div className="flex flex-col justify-between items-center m-3 p-3 rounded-lg bg-base-300  w-2/3 mx-auto my-5">
+        <div className="flex flex-col justify-between items-center m-3 p-3 rounded-lg bg-base-300  w-1/2 mx-auto my-5">
                         {
                 requests.map(request =>{
                 const {_id, firstName,lastName,gender,about,age} = request.fromUserId;

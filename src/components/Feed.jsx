@@ -12,7 +12,7 @@ export const Feed = ()=>{
             if(feed) return;
             try{
             const res = await axios.get(base_URL+"/feed",{withCredentials:true});
-            //console.log(res.data);
+            console.log(res);
             dispatch(addFeed(res.data))
             }
         catch(err){

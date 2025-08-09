@@ -112,3 +112,26 @@ using sudo systemctl restart nginx
 if any failure occurs change the above code run backend server using pm2 make sure to check the logs with status as online and running then restart nginx it will work
 
 update the base-url in the frontend which was localhost:3000 to /api and before /api the url directly comes here
+
+then push the changes to git and in remove instance do git pull then do npm run build, copy the updated dist folder to /var/www/html then it will works
+
+
+Adding a custom domain name
+purchase the domain name from go daddy or any websites
+after purchasing the domain name then search for mapping dns in the website or DNS Management option
+cloudflare - it manages the DNS well or we can also do the process of DNS mapping on godaddy itself
+if going with cloudflare after logging in add the domain name you got
+after quick scan you can go for free plan based on requirements
+after it found records of domain name it ask for activation then it assigns a cloudflare nameservers
+then it godaddy you can change the nameservers given by godaddy to cloudflare nameservers
+and click save then in cloudflare click on check nameservers now and it takes few mins to check
+then we delete the A records in the cloudflare and we create a new record with our new IP address given by aws instance and keep proxy status as active and dont change the cname records and save it now when we refresh and visit devtinder.in it will load the website we hosted in AWS instance
+
+next we can enable ssl on our website
+in cloudflare go to ssl tab, go to configure and select automatic ssl/tls default and go to custom ssl/tls and select flexible, save it
+
+then go to edge certificates
+ then locate automatic http rewrites and make sure it is enabled
+
+ and study about how enable full ssl/tls in server as well
+ 

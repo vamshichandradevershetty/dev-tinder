@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { useNavigate } from "react-router-dom";
 import { base_URL } from "../utils/Constants";
-
 export const Login = ()=>{
     const [emailID,setEmailId] = useState('');
     const [password,setPassword] = useState('');

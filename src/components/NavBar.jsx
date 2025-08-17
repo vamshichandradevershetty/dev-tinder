@@ -56,6 +56,11 @@ export const NavBar = ()=>{
             pendingRequests
          </Link>
         </li>
+        <li>
+          <Link to="/premium"className="justify-between">
+            Premium
+         </Link>
+        </li>
         <li><a>Settings</a></li>
         <li><Link onClick={handleLogOut}>Logout</Link></li>
       </ul>
